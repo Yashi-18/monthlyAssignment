@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RecipeFinder</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="header">
+<nav class="nav wrap">
+<a class="brand" href="#">♨ <b>Recipe<span>Finder</span></b></a>
+<div class="nav-links"><a href="#recipes">Home</a><button id="favoriteNav">♡ Favorit <b id="favoriteCount">0</b></button></div>
+</nav>
+</header>
+
+<section class="hero">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<p class="label">🍃 Masak itu menyenangkan!</p>
+<h1>Temukan resep<br>favoritmu <em>di sini.</em></h1>
+<p>Jelajahi resep dari berbagai negara. Cari, pilih, lalu simpan resep yang ingin kamu coba.</p>
+<form id="searchForm" class="search"><span>⌕</span><input id="search" type="search" placeholder="Cari resep... (misal: chicken, pasta, dessert)"><button>Cari</button></form>
+</div>
+<div class="hero-photo"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85" alt="Pasta"><i>fresh & tasty ✦</i><strong>made with love ♡</strong></div>
+</div>
+</section>
+
+<main id="recipes" class="wrap main">
+<div class="heading"><div><small>EXPLORE RECIPES</small><h2>Semua Resep</h2><p id="result">Sedang mengambil resep...</p></div><aside>good food,<br><em>good mood</em> ☺</aside></div>
+
+<div class="filters">
+<label>Kategori<select id="tag"><option value="all">Semua Kategori</option></select></label>
+<label>Cuisine<select id="cuisine"><option value="all">Semua Cuisine</option></select></label>
+<label>Meal Type<select id="meal"><option value="all">Semua Meal</option></select></label>
+<label>Urutkan<select id="sort"><option value="default">Default</option><option value="name-asc">Nama A–Z</option><option value="name-desc">Nama Z–A</option><option value="rating">Rating tertinggi</option><option value="time">Waktu tercepat</option></select></label>
+<button id="reset">↻ Reset</button>
+</div>
+
+<div id="loading" class="message"><div class="loader"></div><h3>Memuat resep...</h3><p>Tunggu sebentar, kita lagi nyari makanan enak.</p></div>
+<div id="error" class="message" hidden><b class="big">☹</b><h3>Ups, resepnya belum bisa dimuat.</h3><p id="errorText"></p><button id="retry">Coba Lagi</button></div>
+<div id="empty" class="message" hidden><b class="big">🍽</b><h3>Belum ketemu resepnya.</h3><p>Coba kata pencarian atau filter lain.</p></div>
+<div id="grid" class="grid"></div>
+</main>
+
+<section id="favorites" class="wrap fav-section" hidden>
+<div class="heading"><div><small>MY COLLECTION</small><h2>Resep Favorit <span>♥</span></h2><p>Resep yang kamu simpan akan tetap ada setelah refresh.</p></div><button id="back">← Semua resep</button></div>
+<div id="favGrid" class="grid"></div>
+<div id="favEmpty" class="message" hidden><b class="big">♡</b><h3>Belum ada resep favorit.</h3><p>Klik ikon hati pada resep yang kamu suka.</p></div>
+</section>
+
+<dialog id="modal"><div class="modal"><button id="close" class="close">×</button><div id="modalBody"></div></div></dialog>
+
+<footer><div class="wrap foot"><div><a class="brand" href="#">♨ <b>Recipe<span>Finder</span></b></a><p>Resep enak, hidup lebih nikmat.</p></div><div><a href="#recipes">Home</a> · <button id="footerFav">Favorit</button></div><small>© 2026 RecipeFinder • Vanilla JavaScript</small></div></footer>
+</body>
+</html>
